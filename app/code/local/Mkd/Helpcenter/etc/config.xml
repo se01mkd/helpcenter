@@ -1,0 +1,89 @@
+<config>
+    <modules>
+        <Mkd_Helpcenter>
+            <version>0.1.0</version>
+        </Mkd_Helpcenter>
+    </modules>
+    <frontend>
+        <routers>
+            <helpcenter>
+                <use>standard</use>
+                <args>
+                    <module>Mkd_Helpcenter</module>
+                    <frontName>help-center</frontName>
+                </args>
+            </helpcenter>
+        </routers>
+    </frontend>
+    <global>
+        <models>
+            <helpcenter>
+                <class>Mkd_Helpcenter_Model</class>
+                <resourceModel>helpcenter_resource</resourceModel>
+            </helpcenter>
+            <helpcenter_resource>
+                <class>Mkd_Helpcenter_Model_Resource</class>
+                <entities>
+                    <topic>
+                        <table>helpcenter_topic</table>
+                    </topic>
+
+                    <topicconfig>
+                        <table>helpcenter_topic_config</table>
+                    </topicconfig>
+
+                    <article>
+                        <table>helpcenter_article</table>
+                    </article>
+
+                    <articleconfig>
+                        <table>helpcenter_article_config</table>
+                    </articleconfig>
+
+                    <articleview>
+                        <table>helpcenter_article_view</table>
+                    </articleview>
+
+                    <articlevote>
+                        <table>helpcenter_article_vote</table>
+                    </articlevote>
+                </entities>
+            </helpcenter_resource>
+        </models>
+
+        <resources>
+            <helpcenter_setup>
+                <setup>
+                    <module>Mkd_Helpcenter</module>
+                </setup>
+            </helpcenter_setup>
+
+        </resources>
+        <blocks>
+            <admin_helpcenter>
+                <class>Mkd_Helpcenter_Block_Adminhtml</class>
+            </admin_helpcenter>
+        </blocks>
+    </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mkd_helpcenter>Mkd_Helpcenter_Adminhtml</mkd_helpcenter>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <adminhtml>
+        <layout>
+            <updates>
+                <helpcenter>
+                    <file>helpcenter.xml</file>
+                </helpcenter>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>

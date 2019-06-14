@@ -1,0 +1,35 @@
+
+<div id="topic_tab_form_section_content" style="">
+    <div class="entry-edit">
+        <div class="entry-edit-head">
+            <h4 class="icon-head head-edit-form fieldset-legend">Topic
+                Information</h4>
+            <div class="form-buttons"></div>
+        </div>
+        <div class="fieldset fieldset-wide" id="topic">
+            <table class="form-list">
+                <tbody>
+                <tr>
+                    <td class="label"><label for="title">Title</label></td>
+                    <td class="value"><input id="title" name="title" value="<?php echo $this->getTopicData('title'); ?>"
+                                             class="required-entry input-text required-entry" type="text"></td>
+                </tr>
+                <tr>
+                    <td class="label"><label for="description">Description</label></td>
+                    <td class="value">
+                        <textarea id="description" name="description" class="textarea required-entry"><?php echo $this->getTopicData('description'); ?></textarea>
+                    </td>
+                    <td class="scope-label">[STORE VIEW]</td>
+                </tr>
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+    //<![CDATA[
+    var contactForm = new VarienForm('contactForm', true);
+    //]]>
+</script>

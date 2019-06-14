@@ -1,0 +1,10 @@
+<?xml version="1.0"?>
+
+<config>
+    <modules>
+        <Mkd_Helloworld>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Mkd_Helloworld>
+    </modules>
+</config>

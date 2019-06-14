@@ -1,0 +1,15 @@
+<config>
+
+    <menu>
+        <cms>
+            <children>
+                <helpcenter>
+                    <title>Help Center</title>
+                    <action>adminhtml/helpcenter</action>
+                    <sort_order>20</sort_order>
+                </helpcenter>
+            </children>
+        </cms>
+    </menu>
+
+</config>

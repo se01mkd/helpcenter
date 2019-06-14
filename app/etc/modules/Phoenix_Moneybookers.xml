@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<config>
+    <modules>
+        <Phoenix_Moneybookers>
+            <active>true</active>
+            <codePool>community</codePool>
+        </Phoenix_Moneybookers>
+    </modules>
+</config>

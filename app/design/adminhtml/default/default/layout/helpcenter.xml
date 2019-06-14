@@ -1,0 +1,101 @@
+<layout version="0.1.0">
+
+
+    <adminhtml_helpcenter_index>
+        <reference name="content">
+            <block type="admin_helpcenter/grid" name="helpcenter"/>
+        </reference>
+    </adminhtml_helpcenter_index>
+
+
+    <adminhtml_helpcenter_edit>
+        <reference name="head">
+            <action method="setCanLoadExtJs">
+                <flag>1</flag>
+            </action>
+            <action method="setCanLoadTinyMce">
+                <flag>1</flag>
+            </action>
+            <action method="addJs">
+                <script>lib/flex.js</script>
+            </action>
+            <action method="addJs">
+                <script>mage/adminhtml/flexuploader.js</script>
+            </action>
+            <action method="addJs">
+                <script>mage/adminhtml/browser.js</script>
+            </action>
+            <action method="addJs">
+                <script>prototype/window.js</script>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/default.css</name>
+            </action>
+            <action method="addItem">
+                <type>js_css</type>
+                <name>prototype/windows/themes/magento.css</name>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>mage/adminhtml/wysiwyg/tiny_mce/setup.js</name>
+                <params/>
+            </action>
+            <action method="addItem">
+                <type>js</type>
+                <name>tiny_mce/tiny_mce.js</name>
+                <params/>
+            </action>
+        </reference>
+
+        <reference name="left">
+            <block type="admin_helpcenter/helpcenter_switcher" name="multi_switcher"/>
+
+        </reference>
+
+    </adminhtml_helpcenter_edit>
+
+    <adminhtml_helpcenter_articlestab>
+
+        <block type="core/text_list" name="root" output="toHtml">
+
+            <block type="admin_helpcenter/helpcenter_edit_tab_article" name="helpcenter.tab.articles"/>
+            <block type="adminhtml/widget_grid_serializer" name="helpcenter.serializer.articles">
+                <action method="initSerializerBlock">
+                    <grid_block_name>helpcenter.tab.articles</grid_block_name>
+                    <data_callback>getSelectedArticles</data_callback>
+                    <input_name>article_ids</input_name>
+                    <reload_param_name>article</reload_param_name>
+                </action>
+            </block>
+        </block>
+    </adminhtml_helpcenter_articlestab>
+
+    <adminhtml_helpcenter_articlesgrid>
+        <block type="core/text_list" name="root" output="toHtml">
+            <block type="admin_helpcenter/helpcenter_edit_tab_article" name="helpcenter.tab.articles"/>
+        </block>
+    </adminhtml_helpcenter_articlesgrid>
+    <!--    -->
+    <!--    <adminhtml_helpcenter_topicstab>-->
+    <!--        <block type="core/text_list" name="root" output="toHtml">-->
+    <!--            <block type="admin_helpcenter/helpcenter_edit_tab_topic" name="helpcenter.tab.topics"/>-->
+    <!--            <block type="adminhtml/widget_grid_serializer"  name="inchoo.serializer.customers">-->
+    <!--                <action method="initSerializerBlock">-->
+    <!--                    <grid_block_name>helpcenter.tab.topics</grid_block_name>-->
+    <!--                    <data_callback>getSelectedTopics</data_callback>-->
+    <!--                    <hidden_input_name>topic_ids</hidden_input_name>-->
+    <!--                    <reload_param_name>topic</reload_param_name>-->
+    <!--                </action>-->
+    <!--            </block>-->
+    <!--        </block>-->
+    <!--    </adminhtml_helpcenter_topicstab>-->
+
+    <!--    <adminhtml_helpcenter_topicsgrid>-->
+    <!--        <block type="core/text_list" name="root" output="toHtml">-->
+    <!--            <block type="admin_helpcenter/helpcenter_edit_tab_topic" name="helpcenter.tab.topics"/>-->
+    <!--        </block>-->
+    <!--    </adminhtml_helpcenter_topicsgrid>-->
+
+
+</layout>
